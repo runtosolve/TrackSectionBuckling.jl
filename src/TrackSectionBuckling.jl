@@ -69,9 +69,9 @@ function get_section_coordinates(dimensions)
     ) = dimensions 
 
     section_dimensions = [B, H, B]
-    r = [r+t, r+t, r+t, r+t]
-    n = [3, 3, 3, 3, 3]
-    n_r = [3, 3, 3, 3];
+    r = [r+t, r+t]
+    n = [3, 3, 3]
+    n_r = [3, 3];
     θ = [π, -π/2, 0.0]
 
     coordinates = CrossSectionGeometry.create_thin_walled_cross_section_geometry(section_dimensions, θ, n, r, n_r, t, centerline = "to left", offset = (section_dimensions[2], section_dimensions[3]))
@@ -98,7 +98,7 @@ function get_straight_corner_section_coordinates(dimensions)
     ) = dimensions 
 
     section_dimensions = [B, H, B]
-    n = [1, 1, 1, 1, 1]
+    n = [1, 1, 1]
     θ = [π, -π/2, 0.0]
 
     coordinates = CrossSectionGeometry.create_thin_walled_cross_section_geometry(section_dimensions, θ, n, t, centerline = "to left", offset = (section_dimensions[2], section_dimensions[3]))
