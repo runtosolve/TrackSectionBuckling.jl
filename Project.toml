@@ -1,6 +1,6 @@
 name = "TrackSectionBuckling"
 uuid = "8816d751-d931-4b1b-8c00-6f84a4aca6a5"
-version = "0.1.0"
+version = "0.2.0"
 authors = ["Cris Moen <cris.moen@runtosolve.com>"]
 
 [deps]
