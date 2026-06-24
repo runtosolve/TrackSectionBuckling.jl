@@ -358,14 +358,18 @@ function calculate_Mcrℓ_yy_neg(dimensions, material)
 end
 
 
-function calculate_all_buckling_modes(dimensions, material)
+function calculate_properties(dimensions, material)
 
+    coordinates = get_section_coordinates(dimensions) #centerline coordinates 
+    t = dimensions.t
+    section_properties = TrackSectionBuckling.calculate_section_properties(coordinates, t)
 
-    all_buckling_modes = (Pcrℓ = calculate_Pcrℓ(dimensions, material),
+    properties = (section = section_properties, Pcrℓ = calculate_Pcrℓ(dimensions, material),
     Mcrℓ_xx = calculate_Mcrℓ_xx(dimensions, material),
     Mcrℓ_yy_pos = calculate_Mcrℓ_yy_pos(dimensions, material),
     Mcrℓ_yy_neg = calculate_Mcrℓ_yy_neg(dimensions, material))
 
+    return properties
 
 end
 
